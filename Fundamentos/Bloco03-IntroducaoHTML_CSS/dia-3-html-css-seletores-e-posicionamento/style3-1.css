@@ -1,0 +1,52 @@
+div:hover{
+    outline: solid red;
+}
+
+div:first-of-type{
+    color: rgb(68, 0, 255);
+    font-style: italic;
+}
+
+div:nth-of-type(2){
+    color: darkblue;
+}
+
+div:nth-of-type(3){
+    color: darkred;
+    font-size: 50px;
+    font-style: italic;
+}
+
+div:nth-of-type(4){
+    color: deeppink;
+}
+
+div:last-of-type{
+    color: dodgerblue;
+    font-style: italic;
+}
+
+/* Foi terrível entender pseudo-classes, não sei se eu compliquei ou se elas são complicadas mesmo; mas a documentação do mozilla em inglês tem uma informação melhor posta que a versão traduzida https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes */
+
+h3{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+
+/* 
+O caso acima é um caso de uso do outline:
+Propriedade especifica o estilo do contorno e pode ter um dos seguintes valores:
+
+dotted - Define um contorno pontilhado
+dashed - Define um contorno tracejado
+solid - Define um contorno sólido
+double - Define um contorno duplo
+groove - Define um contorno ranhurado 3D
+ridge - Define um contorno 3D estriado
+inset - Define um contorno de inserção 3D
+outset - Define um esboço inicial 3D
+none - Não define contorno
+hidden - Define um contorno oculto
+Mais informações em: https://www.w3schools.com/css/css_outline.asp
+ */

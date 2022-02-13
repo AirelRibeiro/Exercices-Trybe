@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <header>
+      <h2 id="page-title">Título</h2>
+      <p id="paragraph" class="paragrafo">Dê uma cor para este parágrafo!</p>
+      <h4 id="subtitle">Subtítulo</h4>
+      <p id="second-paragraph" class="paragrafo">Segundo parágrafo!</p>
+    </header>
+    <script>
+      const paragraph = document.getElementById("paragraph");
+      paragraph.style.color = "red";
+
+
+//CÓDIGO TESTADO NO CONSOLE PARA PARTE 2 - getElementById DO DIA 5.1 (Revisão de sábado)
+
+// let titulo = document.getElementById("page-title");
+// undefined
+// titulo
+// <h2 id=​"page-title">​Título​</h2>​
+// titulo.innerText = "Rua do medo: 1666";
+// 'Rua do medo: 1666'
+// let segundoParagrafo = document.getElementById("second-paragraph");
+// undefined
+// segundoParagrafo
+// <p id=​"second-paragraph">​Segundo parágrafo!​</p>​
+// segundoParagrafo.innerText = "O filme dot título faz parte da trilogia 'A Rua do Medo', da Netflix"
+// "O filme dot título faz parte da trilogia 'A Rua do Medo', da Netflix"
+// let subtitulo = document.getElementById("subtitle");
+// undefined
+// subtitulo.innerText = "Este é o terceiro filme, precedido por 'Rua do Medo: 1994' e 'Rua do Medo:1978'"
+// "Este é o terceiro filme, precedido por 'Rua do Medo: 1994' e 'Rua do Medo:1978'"
+
+// ------------------------------------------------------------------------------------------------//
+//CÓDIGO TESTADO NO CONSOLE PARA PARTE 2 - getElementsByTagName, getElementsByClassName DO DIA 5.1 (Revisão de sábado)
+
+// let paragrafo = document.getElementsByClassName("paragrafo");
+// undefined
+// paragrafo[0].style.color = "bluberry";
+// 'bluberry'
+// paragrafo[0].style.color = "#642EFE"
+// '#642EFE'
+// paragrafo[0].style.fontSize = "50px";
+// '50px'
+// let subtitulo = document.getElementsByTagName("h4");
+// undefined
+// subtitulo[0].style.backgroundColor = "#642EFE";
+// '#642EFE'
+// subtitulo[0].style.fontSize = "30px";
+// '30px'
+
+// ------------------------------------------------------------------------------------------------//
+// CÓDIGO TESTADO NO CONSOLE PARA PARTE 3 - querySelector e querySelectorAll DO DIA 5.1 (Revisão de sábado)
+
+// let titulo = document.querySelector("#page-title");
+// undefined
+// titulo.innerText = "Rua do medo: 1666";
+// 'Rua do medo: 1666'
+// titulo.innerHTML = "Trilogia Rua do Medo";
+// 'Trilogia Rua do Medo'
+// titulo.textContent = "Rua do Medo: 1966";
+// 'Rua do Medo: 1966'
+// 'Rua do Medo: 1966'
+// let paragrafos = document.querySelectorAll("p");
+// undefined
+// paragrafos
+// NodeList(2) [p#paragraph.paragrafo, p#second-paragraph.paragrafo]0: p#paragraph.paragrafo1: p#second-paragraph.paragrafolength: 2[[Prototype]]: NodeList
+// paragrafos[1].textContent = "É o último filme da trilogia 'A Rua do Medo', precedido por 'Rua do Medo: 1994' e 'Rua do Medo:1978'."
+// "É o último filme da trilogia 'A Rua do Medo', precedido por 'Rua do Medo: 1994' e 'Rua do Medo:1978'."
+// let subtitulo = document.querySelector("h4");
+// undefined
+// subtitulo.textContent = "Melhor filme de terror da Netflix!"
+// 'Melhor filme de terror da Netflix!'
+
+// let paragrafo = document.querySelectorAll(".paragrafo");
+
+// --->paragrafo
+//     NodeList(2) [p#paragraph.paragrafo, p#second-paragraph.paragrafo]
+
+//     paragrafo[0].style.fontSize = "40px";
+// '40px'
+// paragrafo[0].style.color = "#642EFE";
+// '#642EFE'
+
+// let subtitulo = document.querySelector("#subtitle");
+// undefined
+// subtitulo.style.color = "darkGreen"
+// 'darkGreen'
+// subtitulo.style.fontSize = "30px";
+// '30px'
+
+
+    </script>
+  </body>
+</html>

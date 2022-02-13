@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      section {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      //Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body;
+      let titulo = document.createElement("h1");
+      document.body.appendChild(titulo);
+
+      //Adicione a tag main com a classe main-content como filho da tag body ;
+      let principal = document.createElement("main");
+      principal.className = "main-content";
+      document.body.appendChild(principal);
+
+      //Adicione a tag section com a classe center-content como filho da tag main criada no passo 2;
+      let secao = document.createElement("section");
+      secao.classList = "center-content";
+      principal.appendChild(secao);
+
+      //Adicione a tag p como filho do section criado no passo 3 e coloque algum texto;
+      let paragrafo = document.createElement("p");
+      paragrafo.textContent = "Não sei para onde isso está indo, mas em nome de São Caíque dos index esquecidos, espero que para algum lugar!";
+      secao.appendChild(paragrafo);
+
+
+      //Adicione a tag section com a classe left-content como filho da tag main criada no passo 2;
+      let secao2 = document.createElement("section");
+      secao2.className = "left-content";
+      principal.appendChild(secao2);
+
+      //Adicione a tag section com a classe right-content como filho da tag main criada no passo 2;
+      let secao3 = document.createElement("section");
+      secao3.className = "right-content";
+      principal.appendChild(secao3);
+
+      /*Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do section criado no passo 5;
+        Não sabia como realizar esse passo, assim consultei: https://cursos.alura.com.br/forum/topico-inserir-imagem-dentro-do-javascript-89494;*/
+      let imagem = document.createElement("img");
+      imagem.src = "https://picsum.photos/200";
+      imagem.className = "small-image";
+      secao2.appendChild(imagem);
+
+      /* Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um , dois , três , ... como valores da lista. Essa lista deve ser filha do section criado no passo 6;
+      Acredito na possibilidade de criar uma função para inserir o texto nos li, o melhor resultado se deu com objeto, mas sobrava um ponto sem número, com os outros ficando e um à dez. Tentarei melhorar o código posteriormente*/
+      let lista = document.createElement("ul");
+      secao3.appendChild(lista);
+
+
+      function criaItem(numeroTotal, tipoDeItem, elementoPai) {
+        for (let i = 1; i <= numeroTotal; i += 1) {
+          let item = document.createElement(tipoDeItem);
+          elementoPai.appendChild(item);
+        }
+      }
+      criaItem(10, "li", lista);
+
+      let itensDeLista = document.querySelectorAll(".right-content ul li");
+      itensDeLista[0].textContent = "um";
+      itensDeLista[1].textContent = "dois";
+      itensDeLista[2].textContent = "três";
+      itensDeLista[3].textContent = "quatro";
+      itensDeLista[4].textContent = "cinco";
+      itensDeLista[5].textContent = "seis";
+      itensDeLista[6].textContent = "sete";
+      itensDeLista[7].textContent = "oito";
+      itensDeLista[8].textContent = "nove";
+      itensDeLista[9].textContent = "dez";
+   
+     //Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2.
+     //Função criaItem utilizada (Ver linhas 103-108)
+     criaItem(3, "h3", principal);
+
+     //Adicione a classe title na tag h1 criada;
+     titulo.className = "title";
+
+     //Adicione a classe description nas 3 tags h3 criadas;
+      let aga3 = document.querySelectorAll(".main-content h3");
+      for (i in aga3) {
+        aga3[i].className = "description";
+      }
+
+      //Remova a section criado no passo 5 (aquele que possui a classe left-content ). Utilize a função .removeChild() - Código executado no console;
+      // principal.removeChild(secao2);
+
+      /*Centralize a section criado no passo 6 (aquele que possui a classe right-content ). Dica: para centralizar, basta configurar o margin-right: auto da section ;
+      Atentar para o fato de que, sendo usada no JavaScript, essa propriedade de estilo perde o hífem (margin-right) e ganha camel case (marginRight)*/
+      //centraliza[0].style.marginRight = "auto";
+      
+      /*Troque a cor de fundo do elemento pai da section criada no passo 3 (aquela que possui a classe center-content ) para a cor verde;
+      Supus que a ideia era acessar pela section mencionada no enunciado, assim a nova let declarada.*/
+      // let paiPorSecao = secao.parentElement;
+      // paiPorSecao.style.backgroundColor = "green";
+      
+      //Remova os dois últimos elementos ( nove e dez ) da lista criada no passo 8.
+      // itensDeLista[9].remove();
+      // itensDeLista[8].remove();
+
+
+  
+
+
+
+    </script>
+  </body>
+</html>

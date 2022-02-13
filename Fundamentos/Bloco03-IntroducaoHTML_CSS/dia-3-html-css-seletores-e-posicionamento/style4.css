@@ -1,0 +1,63 @@
+ol li {
+    background-color: yellow;
+}
+
+ol li.par {
+    color: green;
+}
+
+ol li.impar {
+    text-transform: uppercase ;
+}
+
+.header {
+    color: tomato;
+}
+
+.italic {
+    font-size: 40px;
+    border: 1px black solid;
+
+    /* O caso acima foi um exemplo do uso do tipo de contorno referenciao em 'style3-1', esclarecendo que não é necessário o uso de 'outline' para usar as especificações de contorno, visto que, ao fazer um texte com 'double' o contorno ficou duplo (necessitando aumentar o tamanho da borda para ser visualizado) */
+}
+
+li em {
+    font-weight: 900;
+}
+
+li {
+    font-size: 20px;
+}
+
+.linguagens li:nth-of-type(1), li:nth-of-type(2), .linguagens li:nth-of-type(3) {
+    color: blue;
+}
+
+
+/* Da linha 32, está estabelecido que, onde a classe for linguagens (daí o .linguagens), cujo filho for listIten (daí o li), com a pseudoclasse :nth-of-type(x) (sendo essa pseudo classe utilizada para declarar que é qualquer elemento do tipo especificado [nesse caso um li filho da classe linguagens] com a posição do elemento sendo declarada dentro dos parênteses) ficará com a cor de fonte blue */
+
+.aliados_dev li:hover {
+    width: 150px;
+    font-weight: 900;
+}
+ /* Seção de coloração dos itens da lista de aliados de desenvolvedores */
+
+ #um:hover{
+    color: orange;
+}
+
+#dois:hover{
+    color: green;
+}
+
+#tres:hover{
+    color: black;
+}
+
+#quatro:hover{
+    color: yellow;
+}
+
+#cinco:hover{
+    color: darkgreen;
+}

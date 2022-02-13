@@ -1,0 +1,6 @@
+O que eu vou aprender na Trybe:
+
+- Aprender a aprender
+- JavaScript
+- Bash
+- Git

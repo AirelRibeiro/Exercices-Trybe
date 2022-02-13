@@ -1,0 +1,52 @@
+
+
+.super-mario {
+    width: 200px;
+    position: absolute;
+    z-index: 1;
+   }
+  
+  .goomba {
+    width: 100px;
+    position: absolute;
+    z-index: 2;
+    margin-top: 300px;
+  }
+  
+  .baloon {
+      position: absolute;
+      z-index: 4;
+     
+      /* margin-left: 400px;  */
+      /* margin-top: -100px; */
+
+      /* O caso acima foi um teste, não sabia ser a sintaxe do margin permitiria um valor negativo; mas permite, o valor inicial do margin-top é 0, então, até aqui, pelo que vi, qualquer localizaqção acima do original envolve margin negativa; dito isso, parece mais frutífero utilizar outras formas, o que nos leva ao caso abaixo */
+
+      /* left: calc(100% - 450px); 
+      
+      Esse exemplo é terrível, no caso do uso do 'calc()'; ele seria muito interessante se eu entendesse de posicionamento, relacionamento, tamanho de tela e comportamento de elementos em CSS e soubesse onde usá-lo, como eu não, deixei para lebrar que existe; assim, vamos para o próximo*/
+
+    left: 400px;
+    top: 50px;
+
+    /* E, finalmente deu certo, aprendizado:left: 
+    1 - não precisa surtar, lembre da navalha de ocan, SIMPLIFIQUE; E DE Caíque, não coloque complexidade onde não tem!
+    2 - Se você delimitar left, right, top and bottom, em poucos elementos e com localizações simples, dá para arrumar quase tudo */
+  }
+  
+    
+  .speach {
+    position: absolute;
+    font-size: 25px;
+    z-index: 5;
+    left: 430px;
+    top: 90px;
+    }
+  
+  .bowser {
+    width: 200px;
+    position: absolute;
+    z-index: 3;
+    left: 700px;
+    top: 200px;
+  }

@@ -1,0 +1,25 @@
+span {
+    color: blueviolet;
+    font-weight: 900;
+}
+
+.order_list {
+    width: 500px;
+    text-align: justify;
+    margin: auto;
+}
+
+/* Para não esquecer: na lina 7 eu delimito a largura dos elementos da classe order_list a 500px, na linha 8 o texto desse elemento está justificado (sim, como no word), e na linha 9 uso 'margin:auto' para que ele divida o espaço de margem do conteúdo de forma igual, o que graficamente faz ele ficar no centro (Caíque mostrou isso na aula de 28/01/22) */
+
+h1, p {
+    text-align: center;
+}
+
+li:hover{
+    background-color: coral;
+}
+li:active{
+    color: white;
+}
+
+/* hover e active são pseudoclasses, elas são muito interessantes e podem fazer várias coisas esse site: https://developer.mozilla.org/pt-BR/docs/Web/CSS/Pseudo-classes contém todas as pseudoclasses de CSS*/

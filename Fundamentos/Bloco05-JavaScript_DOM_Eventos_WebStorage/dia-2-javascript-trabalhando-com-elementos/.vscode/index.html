@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="avo">
+    <section id="pai">
+      <section id="primeiroFilho"></section>
+      <section id="segundoFilho">
+        <section id="primeiroFilhoDoSegundoFilho"></section>
+        <section id="segundoFilhoDoSegundoFilho"></section>
+      </section>
+      Atenção!
+      <section id="terceiroFilho"></section>
+      <section id="quartoEUltimoFilho"></section>
+    </section>
+  </main>
+  <script>
+    console.log(document.body);
+  //CÓDIGO FEITO PARA PRIMEIRA, SEGUNDA E TERCEIRA PARTES DE 5.2
+
+  //Acesse o elemento segundoFilho: .
+let second = document.getElementById("segundoFilho");
+// second;
+// <section id=​"segundoFilho">​…​</section>​
+
+//Acesse pai a partir de segundoFilho e adicione uma color a ele.
+let daddy = second.parentNode;
+daddy.className = "small red circle";
+
+//Acesse o primeiroFilhoDoSegundoFilho e adicione um texto a ele:
+let primeiroBisneto = second.children[0];
+primeiroBisneto.textContent = "Eu sou o primeiro bisneto!!!";
+
+//Acesse o primeiroFilho a partir de pai:
+// daddy.children[0];
+// <section id=​"primeiroFilho">​</section>​
+
+//Agora acesse o primeiroFilho a partir de segundoFilho:
+// second.previousElementSibling;
+// <section id=​"primeiroFilho">​</section>​
+
+//Agora acesse o texto Atenção! a partir de segundoFilho:
+// second.nextSibling;
+// " Atenção! "
+
+//Agora acesse o terceiroFilho a partir de segundoFilho:
+// second.nextElementSibling;
+// <section id=​"terceiroFilho">​</section>​
+
+//Agora acesse o terceiroFilho a partir de pai:
+// daddy.children[2];
+// <section id=​"terceiroFilho">​</section>​
+
+//Crie um irmão para segundoFilho:
+let filhoForaDoCasamento = document.createElement("section");
+daddy.appendChild(filhoForaDoCasamento);
+
+//Crie um filho para segundoFilho:
+let son = document.createElement("section");
+second.appendChild(son);
+
+//Crie um filho para primeiroFilhoDoSegundoFilho .
+let greatGrandSon = document.createElement("section");
+primeiroBisneto.appendChild(greatGrandSon);
+
+//A partir desse filho criado, acesse terceiroFilho .
+// greatGrandSon.parentElement.parentElement.nextElementSibling;
+// <section id=​"terceiroFilho">​</section>​
+
+//Remova todos os elementos do avô, exceto pai, segundoFilho e primeiroFilhoDoSegundoFilho
+
+/*A primeira vez em que o exercício foi feito eu não conseguia remover o terceiroFilho e como estava fazendo no VSCode não entendia porque; a questão foi que, ao excluir, por exemplo daddy.children[0], sendo ele parte de um conjunto de elementos, as posições vão subir para ocupar a posição antes ocupada por ele, então, se antes existiam de daddy.children[0] a daddy.children[3], agora existirão de daddy.children[0] a daddy.children[2], o que significa que, se eu seguir removendo estes elementos com base no index original, quando eu colocar daddy.children[3], após ter removido o [0] e o [2], ele vai me dizer que esse elemento não existe. 
+LIÇÕES APRENDIDAS:
+1 - Se o código não está fazendo o que você acredita que ele deveria estar fazendo, inspecione e verifique se você está dando a ele a mensagem correta;
+2 - Verifique array com a mesma obsessão com a qual você dá git status;
+*/
+
+console.log(daddy.childNodes);
+console.log(daddy.children);
+
+// daddy.removeChild(daddy.children[3]);
+
+// daddy.removeChild(daddy.children[2]);
+
+// daddy.removeChild(daddy.children[0]);
+
+// daddy.removeChild(daddy.children[1]);
+// ​
+// Para remover " Atenção! " (Por não possuir tag HTML "Atenção!" não se qualifica como ele mento, mas sim como nó;VER COMO FOI ACESSADO, POR EXEMPLO, LINE 48 A 50)
+//Forma 1: daddy.removeChild(daddy.childNodes[3]);
+//Forma 2: daddy.childNodes[4].remove();
+
+
+// second.removeChild(second.children[1]);
+
+// second.removeChild(second.children[2]);
+
+// second.removeChild(second.children[1]);
+
+
+  </script>
+</body>
+</html>
+
+
