@@ -11,7 +11,12 @@ html {
   font-weight: 900;
 }
 
-
+.header nav ul {
+  padding: 0;
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+}
 
 @media screen and (max-width: 500px) {
 
@@ -26,13 +31,6 @@ html {
     text-align: center;
     font-size: 25px;
     
-  }
-
-  .header nav ul {
-    padding: 0;
-    display: flex;
-    list-style: none;
-    justify-content: space-evenly;
   }
 
   h2 {
@@ -71,7 +69,7 @@ html {
   }
   footer p {
     padding: 0 50px;
-    text-align: justify;
+    text-align: center;
   }
 }
 
@@ -87,13 +85,6 @@ html {
     text-align: center;
     font-size: 35px;
     font-weight: 900;
-  }
-
-  .header nav ul {
-    padding: 0;
-    display: flex;
-    list-style: none;
-    justify-content: space-evenly;
   }
 
   #asides {
@@ -132,6 +123,7 @@ html {
   .main-content p {
     padding: 0 30px;
     text-align: justify;
+    font-size: 20px;
   }
 
   footer {
@@ -140,15 +132,77 @@ html {
   }
   footer p {
     padding: 0 50px;
-    text-align: justify;
+    text-align: center;
   }
 }
 
-@media screen and (min-width: 501px) {
+@media screen and (min-width: 901px) {
   .container {
     margin: 30px;
     background-color: bisque;
     border: solid rgb(10, 0, 53) 2px ;
   }
+  .header p {
+    color: rgb(2, 1, 26);
+    text-align: center;
+    font-size: 60px;
+    font-weight: 900;
+  }
+
+  .header nav ul {
+    font-size: x-large;
+  }
+
+  #asides {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    margin: 20px;
+  }
+
+  .aside-one ul {
+    padding: 0;
+    font-size: x-large;
+    text-align: left;
+    list-style: none;
+  }
+
+  .aside-one h2 {
+    padding: 0;
+    text-align: left;
+    list-style: none;
+  }
+    
+  .aside-two ul, h2 {
+    padding: 0;
+    font-size: x-large;
+    text-align: right;
+    list-style: none;
+  }
+
+  .aside-two {
+    align-self: center;
+  }
   
+  h1 {
+    text-align: center;
+    font-size: xx-large;
+  }
+
+  .main-content p {
+    padding: 0 30px;
+    text-align: justify;
+    font-size: 35px;
+  }
+
+  footer {
+    text-align: center;
+    font-size: medium;
+    margin: 50px;
+  }
+  footer p {
+    padding: 0 50px;
+    text-align: center;
+    font-size: 25px;
+  }
 }
