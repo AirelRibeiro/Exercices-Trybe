@@ -67,7 +67,4 @@ figcaption {
     font-size: 70px;
     margin: 150px;
   }
-  figure img {
-    flex-basis: 90%;
-}
 }
