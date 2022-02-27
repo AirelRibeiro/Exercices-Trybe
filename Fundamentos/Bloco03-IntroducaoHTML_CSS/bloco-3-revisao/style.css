@@ -1,0 +1,94 @@
+* {
+  padding: 0;
+  box-sizing: border-box;
+  background-color: azure;
+}
+
+#header {
+  margin: 50px;
+  text-align: center;
+}
+
+nav a {
+  margin: 20px;
+  text-decoration: none;
+  font-size: medium;
+  color: blueviolet;
+}
+
+main {
+  margin: 50px;
+}
+
+#secao1 {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#article {
+  width: 70%;
+}
+
+#secao1 p {
+  text-align: justify;
+}
+
+h2, h3 {
+  text-align: center;
+}
+
+#table {
+  border: 1px solid brown;
+  margin: 5px;
+  padding: 5px;
+  width: 300px;
+}
+
+aside {
+  width: 300px;
+  align-self: center;
+}
+
+.line {
+  border: 1px solid salmon;
+}
+
+.column {
+  width: 40%;
+}
+
+#imagens {
+  margin-left: 100px;
+  padding: 0;
+}
+
+.fig {
+  margin: auto;
+  width: 30%;
+  border-radius: 50px;
+}
+
+#fatos-desconhecidos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.fatos {
+  height: 500px;
+  width: 400px;
+  margin: 10px;
+}
+
+.fig-fatos {
+  height: 300px;
+  width: 400px;
+}
+
+.fatos p {
+  text-align: justify;
+}
+
+#referencias {
+  text-align: center;
+}
