@@ -55,4 +55,4 @@ for (let item = 0; item < numbers.length; item += 1) { //For para percorrer o ar
 console.log(arrayFinal);
 
 
-[45, 27, 57, 1330, 560, 800, 200, 70, 945, 54]
+//arrayFin al deve ser igual a:  [45, 27, 57, 1330, 560, 800, 200, 70, 945, 54]
