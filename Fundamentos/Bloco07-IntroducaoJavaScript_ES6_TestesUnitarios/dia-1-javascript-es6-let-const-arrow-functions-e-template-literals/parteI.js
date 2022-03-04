@@ -39,4 +39,4 @@ Fonte: 'https://www.w3schools.com/jsref/jsref_sort.asp'
 */
 const oddsAndEvens = [13, 3, 4, 10, 7, 2];
 
-console.log(`Os números ${oddsAndEvens.sort((a, b) =>{return a-b})} se encontram ordenados de forma crescente!`); // será necessário alterar essa linha 😉
+console.log(`Os números ${oddsAndEvens.sort((a, b) =>{return a-b})} se encontram ordenados de forma crescente!`); 
