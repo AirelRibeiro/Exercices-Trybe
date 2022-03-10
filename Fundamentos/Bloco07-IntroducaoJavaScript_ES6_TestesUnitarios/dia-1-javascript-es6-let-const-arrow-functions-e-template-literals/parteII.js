@@ -57,3 +57,10 @@ JavaScript;
 HTML; ... #goTrybe".
 */
 
+const substituiItem = (stringCompleta, itemOriginal, itemSubstituto) => stringCompleta.replace(itemOriginal, itemSubstituto);
+
+substituiItem('Tryber x aqui!', 'x', 'Bebeto');
+
+const ordenaString = (stringCompleta) => stringCompleta.split(',').sort();
+
+console.log(ordenaString(substituiItem('JavaScript,CSS,HTML,Python,Responsividade','Python', 'Mobile First'))); 
