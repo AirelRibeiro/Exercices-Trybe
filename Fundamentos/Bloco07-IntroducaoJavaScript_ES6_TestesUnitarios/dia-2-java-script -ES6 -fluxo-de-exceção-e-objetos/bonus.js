@@ -25,12 +25,13 @@ const allLessons = {
 };
 
 const studentsInMathClass = (objeto) => {
-  const chaves = Object.keys(objeto);
-  let students = 0;
-  for (let chave in chaves) {
-    if (objeto[chaves[chave]].materia === 'Matemática') {
-      students += objeto[chaves[chave]].numeroEstudantes;
+  const chaves = Object.keys(objeto); // Um array com as chaves em forma de string
+  let students = 0; // Variável para contar os estudantes
+  for (let chave of chaves) { // For para percorrer o objeto relacionado a cada chave
+    if (objeto[chave].materia === 'Matemática') { /* Verifica se o valor da chave matéria dentro do objeto (chave) que está sendo verificado é Matemática. */
+      students += objeto[chave].numeroEstudantes; // Adiciona o número de estudantes do objeto que entrou na condicional a variável students.
     }
-  } return students;
+  } return students; // Retorna o valor final da variável students
 }
 console.log(studentsInMathClass(allLessons));
+
