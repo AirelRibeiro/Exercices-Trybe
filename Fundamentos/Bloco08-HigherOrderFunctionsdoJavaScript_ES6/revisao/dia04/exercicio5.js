@@ -7,5 +7,16 @@ const names = [
 ];
 
 function containsA() {
-  // escreva seu código aqui
+  const contagem = names.reduce((acc, atual) => {
+    return acc + atual.split('').reduce((acc2, atual2) => {
+      if (atual2.toLowerCase() === 'a') {
+        return acc2 + 1
+      } else {
+        return acc2;
+      }
+    }, 0);
+  }, 0);
+  return contagem;
 }
+
+console.log(containsA());
