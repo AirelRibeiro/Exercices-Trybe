@@ -25,7 +25,7 @@ const books = [
     genre: 'Ficção Científica',
     author: {
       name: 'Isaac Asimov',
-      birthYear: 1921,
+      birthYear: 1920,
     },
     releaseYear: 1951,
   },
@@ -55,31 +55,28 @@ const books = [
     genre: 'Terror',
     author: {
       name: 'H. P. Lovecraft',
-      birthYear: 1986,
+      birthYear: 1890,
     },
     releaseYear: 1928,
   },
 ];
 
-/* 7 - Faça uma função que retorne true , caso nenhum author tenha nascido no mesmo ano, e false , caso contrário */
+// 4 - Encontre o livro com o maior nome.
 
-const expectedResult = false;
 
-function authorUnique() {
-  return books.every((book) => {
-    return !books.some((book1) => {
-      (book1.author.birthYear === book.author.birthYear) && (book1.author.name !== book.author.name)
-    });    
-  });
+const expectedResult = {
+  id: 1,
+  name: 'As Crônicas de Gelo e Fogo',
+  genre: 'Fantasia',
+  author: {
+    name: 'George R. R. Martin',
+    birthYear: 1948,
+  },
+  releaseYear: 1991,
+};
+
+function longestNamedBook() {
+  return books.reduce((book1, book2) => (book1.name.length > book2.name.length) ? book1 : book2);
 }
 
-console.log(authorUnique());
-
-
-// function authorUnique() {
-//   return books.every((book) =>
-//     !books.some((bookSome) =>
-//       (bookSome.author.birthYear === book.author.birthYear)
-//       && (bookSome.author.name !== book.author.name)));
-// }
-// console.log(authorUnique());
+console.log(longestNamedBook());

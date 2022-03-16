@@ -35,7 +35,7 @@ const books = [
     genre: 'Ficção Científica',
     author: {
       name: 'Frank Herbert',
-      birthYear: 1920,
+      birthYear: 1921,
     },
     releaseYear: 1965,
   },
@@ -180,11 +180,11 @@ console.log(someBookWasReleaseOnThe80s());
 
 /* 7 - Faça uma função que retorne true , caso nenhum author tenha nascido no mesmo ano, e false , caso contrário. */
 
-const expectedResult = false;
+// const expectedResult = false;
 
 function authorUnique() {
   return books.every((book) => {
-    !books.some((book1) => {
+    return !books.some((book1) => {
       (book.author.birthYear === book1.author.birthYear && book.author.name !== book1.author.name)
     });    
   });

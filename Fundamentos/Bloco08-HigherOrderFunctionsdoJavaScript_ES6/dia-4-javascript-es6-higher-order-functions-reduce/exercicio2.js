@@ -25,7 +25,7 @@ const books = [
     genre: 'Ficção Científica',
     author: {
       name: 'Isaac Asimov',
-      birthYear: 1921,
+      birthYear: 1920,
     },
     releaseYear: 1951,
   },
@@ -55,31 +55,19 @@ const books = [
     genre: 'Terror',
     author: {
       name: 'H. P. Lovecraft',
-      birthYear: 1986,
+      birthYear: 1890,
     },
     releaseYear: 1928,
   },
 ];
 
-/* 7 - Faça uma função que retorne true , caso nenhum author tenha nascido no mesmo ano, e false , caso contrário */
+// 2 - Crie uma string com os nomes de todas as pessoas autoras.
 
-const expectedResult = false;
+const expectedResult = "George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.";
 
-function authorUnique() {
-  return books.every((book) => {
-    return !books.some((book1) => {
-      (book1.author.birthYear === book.author.birthYear) && (book1.author.name !== book.author.name)
-    });    
-  });
-}
+function reduceNames() {
+  return books.reduce((acc, book) =>  (book === books[1]) ? `${acc.author.name}, ${book.author.name}` : `${acc}, ${book.author.name}`
+  );
+};
 
-console.log(authorUnique());
-
-
-// function authorUnique() {
-//   return books.every((book) =>
-//     !books.some((bookSome) =>
-//       (bookSome.author.birthYear === book.author.birthYear)
-//       && (bookSome.author.name !== book.author.name)));
-// }
-// console.log(authorUnique());
+console.log(reduceNames());

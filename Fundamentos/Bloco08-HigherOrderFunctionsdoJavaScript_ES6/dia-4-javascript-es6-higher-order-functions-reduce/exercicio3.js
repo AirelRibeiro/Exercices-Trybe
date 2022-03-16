@@ -25,7 +25,7 @@ const books = [
     genre: 'Ficção Científica',
     author: {
       name: 'Isaac Asimov',
-      birthYear: 1921,
+      birthYear: 1920,
     },
     releaseYear: 1951,
   },
@@ -55,31 +55,20 @@ const books = [
     genre: 'Terror',
     author: {
       name: 'H. P. Lovecraft',
-      birthYear: 1986,
+      birthYear: 1890,
     },
     releaseYear: 1928,
   },
 ];
 
-/* 7 - Faça uma função que retorne true , caso nenhum author tenha nascido no mesmo ano, e false , caso contrário */
+// 3 - Calcule a média de idade que as pessoas autoras tinham quando seus respectivos livros foram lançados.
 
-const expectedResult = false;
+const expectedResult = 43;
 
-function authorUnique() {
-  return books.every((book) => {
-    return !books.some((book1) => {
-      (book1.author.birthYear === book.author.birthYear) && (book1.author.name !== book.author.name)
-    });    
-  });
+function averageAge() {
+  const total = books.reduce((acc, atual) => acc + (atual.releaseYear - atual.author.birthYear), 0);
+  return total / books.length;
 }
 
-console.log(authorUnique());
+console.log(averageAge());
 
-
-// function authorUnique() {
-//   return books.every((book) =>
-//     !books.some((bookSome) =>
-//       (bookSome.author.birthYear === book.author.birthYear)
-//       && (bookSome.author.name !== book.author.name)));
-// }
-// console.log(authorUnique());
