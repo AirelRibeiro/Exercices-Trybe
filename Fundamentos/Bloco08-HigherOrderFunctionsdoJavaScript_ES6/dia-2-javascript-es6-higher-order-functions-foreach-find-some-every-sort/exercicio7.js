@@ -66,7 +66,20 @@ const books = [
 const expectedResult = false;
 
 function authorUnique() {
-  
+  return books.every((book) => {
+    return !books.some((book1) => {
+      (book1.author.birthYear === book.author.birthYear) && (book1.author.name !== book.author.name)
+    });    
+  });
 }
 
 console.log(authorUnique());
+
+
+// function authorUnique() {
+//   return books.every((book) =>
+//     !books.some((bookSome) =>
+//       (bookSome.author.birthYear === book.author.birthYear)
+//       && (bookSome.author.name !== book.author.name)));
+// }
+// console.log(authorUnique());
