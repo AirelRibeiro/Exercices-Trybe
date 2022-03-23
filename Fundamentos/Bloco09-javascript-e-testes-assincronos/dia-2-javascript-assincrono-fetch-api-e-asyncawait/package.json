@@ -1,0 +1,15 @@
+{
+  "name": "dia-2-javascript-assincrono-fetch-api-e-asyncawait",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  }
+}
