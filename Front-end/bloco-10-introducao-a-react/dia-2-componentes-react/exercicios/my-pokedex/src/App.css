@@ -1,0 +1,36 @@
+.pokedex {
+  background-color: rgb(255, 205, 247);
+  text-align: center;
+}
+
+.pokedex h1 {
+  padding: 10px;
+  padding-top: 50px;
+  font-size: 50px;
+  font-family: cursive;
+}
+
+.container-de-pokemons {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: auto;
+}
+
+.pokemon {
+  display: flex;
+  flex-basis: 300px;
+  padding: 5px;
+  border-radius: 50px;
+  border: solid antiquewhite 10px;
+  margin: 5px;
+}
+
+.infor {
+  margin-left: 30px;
+}
+
+.image {
+  height: 100px;
+  width: 100px;
+}
