@@ -3,6 +3,19 @@ import PropTypes from 'prop-types';
 import Image from './Image';
 
 class Pokemon extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+        indexDoPokemon: 0
+    }
+    this.mudaEstado = this.mudaEstado.bind(this)
+}
+
+mudaEstado() {
+    this.setState((indexAnterior, _props) => ({
+        indexDoPokemon: indexAnterior.indexDoPokemon + 1
+    }))
+}
   render () {
     const { pokemons } = this.props;
     return (
