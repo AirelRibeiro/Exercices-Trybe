@@ -1,0 +1,100 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+    <style>
+      body {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+
+      #container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      button {
+        height: 50px;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <p>Color: <span id="value">white</span></p>
+      <button id="previous">Previous color</button>
+      <button id="next">Next color</button>
+      <button id="new">New color</button>
+    </div>
+    <script>
+      const ESTADO_INICIAL = {
+        colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
+        index: 0,
+      };
+
+      const ACTION_NEXT_COLOR = 'NEXT_COLOR';
+      const actionNextColor = () => ({ type: ACTION_NEXT_COLOR });
+
+      const ACTION_PREVIOUS_COLOR = 'PREVIOUS_COLOR';
+      const actionPreviousColor = () => ({ type: ACTION_PREVIOUS_COLOR });
+
+      const ACTION_CREATE_COLOR = 'CREATE_COLOR';
+      const actionCreateColor = () => ({ type: ACTION_CREATE_COLOR });
+  
+      const geraCor = () => {
+        const r = Math.floor(Math.random() * (255 - 0)) + 1;
+        const g = Math.floor(Math.random() * (255 - 0)) + 1;
+        const b = Math.floor(Math.random() * (255 - 0)) + 1;
+        return (`rgb(${r}, ${g}, ${b})`);
+      }
+
+      const reducer = (state = ESTADO_INICIAL, action) => {
+        const sizeOfArray = state.colors.length - 1;
+        switch(action.type) {
+          case ACTION_NEXT_COLOR:
+            return { ...state, index: state.index < sizeOfArray ? state.index += 1 : 0 };
+          case ACTION_PREVIOUS_COLOR:
+            return { ...state, index: state.index > 0 ? state.index -= 1 : sizeOfArray };
+          case ACTION_CREATE_COLOR:
+            const newColor = geraCor();
+            const newArray = [...state.colors, newColor]
+            return { 
+              ...state,
+              colors: newArray,
+              index:  newArray.length - 1
+            }
+          default: return state;
+        }
+      }
+
+     
+
+      const store = Redux.createStore( reducer );
+
+      const nextButton = document.getElementById('next');
+      nextButton.addEventListener('click', () => store.dispatch(actionNextColor()));
+
+      const previousButton = document.getElementById('previous');
+      previousButton.addEventListener('click', () => store.dispatch(actionPreviousColor()));
+
+      const newColorButton = document.getElementById('new');
+      newColorButton.addEventListener('click', () => store.dispatch(actionCreateColor()));
+
+      store.subscribe( () => { 
+        const { colors, index } = store.getState();
+        console.log(colors, index);
+        const value = document.getElementById('value');
+        const container = document.getElementById('container');
+        container.style.backgroundColor = colors[index];
+        value.innerText = colors[index];
+      })
+
+    </script>
+  </body>
+</html>
