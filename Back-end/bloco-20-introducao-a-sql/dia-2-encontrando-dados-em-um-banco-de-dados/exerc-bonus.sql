@@ -44,5 +44,7 @@ ORDER BY price DESC;
 SELECT COUNT(provider) FROM Provides
 WHERE piece LIKE 1;
 
+-- Exercicios 7 - 9 feitos em links externos; 6 não existe no course
+
 -- Resolução 10 -> https://sqlzoo.net/wiki/SELECT_from_WORLD_Tutorial#United
 
