@@ -1,0 +1,1 @@
+["Ao final ","estou ","usando ","Promise.all ","!!!"]
