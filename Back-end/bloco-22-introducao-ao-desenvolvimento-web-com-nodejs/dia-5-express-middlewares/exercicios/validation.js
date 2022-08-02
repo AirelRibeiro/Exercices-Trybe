@@ -62,7 +62,20 @@ function validateInfos(req, _res, next) {
   next();
 }
 
+function validatePersonalInfors(req, res, next) {
+  const { email, password, firstName, phone } = req.body;
+  const error = {
+    status: 401,
+    message: 'Missing Fields'
+  }
+  if(!email || !password || !firstName || !phone) {
+    return next(error);
+  }
+  next();
+}
+
 module.exports = {
   validateProductName,
-  validateInfos
+  validateInfos,
+  validatePersonalInfors
 };
