@@ -14,11 +14,10 @@ app.use('/ping', pingRouter);
 app.use('/cep', cepRouter);
 
 app.use((err, _req, res, _next) => {
-  console.log('Cheguei no tratamento de erros');
   const { error } = err;
-  const { status, code, message } = ERROR[error];
+  const { status, code } = ERROR[error];
 
-  return res.status(status).json({ error: { code, message } })
+  return res.status(status).json({ error: { code, message: ERROR[error].message } })
 });
 
 app.listen(PORT, () => { console.log(`Ouvindo na porta ${PORT}`) });

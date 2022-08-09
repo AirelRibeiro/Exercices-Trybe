@@ -11,7 +11,7 @@ router.get('/:cep', async (req, res) => {
 
 router.post('/', async (req, res) => {
   const { cep, logradouro, bairro, localidade, UF } = req.body;
-  const adress = CepController.insertCepInDataBase(cep, logradouro, bairro, localidade, UF);
+  const adress = await CepController.insertCepInDataBase(cep, logradouro, bairro, localidade, UF);
   res.status(200).json(adress);
 });
 

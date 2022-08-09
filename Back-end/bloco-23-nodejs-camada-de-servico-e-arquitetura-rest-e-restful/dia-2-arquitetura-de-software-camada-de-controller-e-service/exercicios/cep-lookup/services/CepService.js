@@ -1,4 +1,14 @@
+const Joi = require('joi');
 const cepValidation = require('./validation/cepValidation');
+
+const validations = {
+  validLogBarAndLoc: Joi.object({
+    cep: Joi.string().regex(/\d{5}-\d{3}/).required().messages({'string.pattern.base': 'O baguio é doido!|400'}),
+    logradouro: Joi.string().not().empty().required(),
+    bairro: Joi.string().not().empty().required(),
+    localidade: Joi.string().not().empty().required(),
+    }),
+}
 
 async function findAByCep(cep) {
   const validCep = await cepValidation.validateCep(cep);
@@ -7,7 +17,8 @@ async function findAByCep(cep) {
 }
 
 async function insertCepAdress(cep, logradouro, bairro, localidade, uf) {
-  const validAdress = cepValidation.validations.validLogBarAndLoc(logradouro, bairro, localidade);
+  const validAdress = validations.validLogBarAndLoc.validate({ cep, logradouro, bairro, localidade });
+
   
   return validAdress;
 }

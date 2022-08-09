@@ -4,6 +4,7 @@ const GenericError = require('../../errors/GenericError');
 const { runSchema } = require('../../errors/errorSchema');
 
 function validateCep(cep) {
+  console.log('Service validateCep, início');
   const CEP_REGEX = /^\d{5}-?\d{3}$/;
   if (!CEP_REGEX.test(cep)) {
     throw new GenericError('INVALID_CEP');
@@ -13,6 +14,7 @@ function validateCep(cep) {
 }
 
 async function existingCep(cep) {
+  console.log('Service existingCep, início');
   const [adress] = await CepModel.findByCep(cep);
   if(adress.length === 0) {
     throw new GenericError('NOT_FOUND_CEP');
@@ -21,9 +23,7 @@ async function existingCep(cep) {
 }
 
 const validations = {
-  validdCep: runSchema(Joi.object({
-    cep: Joi.string().regex(/\d{5}-\d{3}/).required(),
-    }), 'INVALID_CEP'),
+  validdCep: runSchema(Joi.string().regex(/\d{5}-\d{3}/).required(),),
   validLogBarAndLoc: runSchema(Joi.object({
     logradouro: Joi.string().not().empty().required(),
     bairro: Joi.string().not().empty().required(),

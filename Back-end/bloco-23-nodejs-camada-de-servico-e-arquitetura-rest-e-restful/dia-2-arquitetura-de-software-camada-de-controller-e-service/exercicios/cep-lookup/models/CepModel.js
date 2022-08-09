@@ -7,16 +7,16 @@ async function findByCep(cep) {
   return adress;
 }
 
-async function insertCep(cep, logradouro, bairro, localidade, uf) {
-  const query = `INSERT INTO ceps (cep, logradouro, bairro, localidade, uf) 
-  VALUES (?, ?, ?, ?, ?)`;
+// async function insertCep(cep, logradouro, bairro, localidade, uf) {
+//   const query = `INSERT INTO ceps (cep, logradouro, bairro, localidade, uf) 
+//   VALUES (?, ?, ?, ?, ?)`;
 
-  await connection.execute(query, [cep, logradouro, bairro, localidade, uf]);
+//   await connection.execute(query, [cep, logradouro, bairro, localidade, uf]);
 
-  return { cep, logradouro, bairro, localidade, uf };
-}
+//   return { cep, logradouro, bairro, localidade, uf };
+// }
 
 module.exports = {
   findByCep,
-  insertCep
+  // insertCep
 }
