@@ -6,6 +6,10 @@ async function findAByCep(cep) {
   return adress;
 }
 
+// async function insertCepAdress(cep, logradouro, bairro, localidade, uf) {
+
+// }
+
 module.exports = {
   findAByCep
 }

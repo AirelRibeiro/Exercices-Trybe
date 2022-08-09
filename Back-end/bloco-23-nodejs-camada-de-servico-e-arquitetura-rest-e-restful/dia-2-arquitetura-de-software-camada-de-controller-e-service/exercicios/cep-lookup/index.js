@@ -2,6 +2,7 @@ const express = require('express');
 require('express-async-errors');
 const pingRouter = require('./routes/pingRouter');
 const cepRouter = require('./routes/cepRouter');
+const ERROR = require('./services/validation/errorsObject');
 require('dotenv').config();
 
 const app = express();
@@ -14,8 +15,8 @@ app.use('/cep', cepRouter);
 
 app.use((err, _req, res, _next) => {
   const { error } = err;
-  // const { status, code } = ERROR[message];
-  return res.status(error.status).json({ error: { code: error.code, message: error.message } })
+  const { status, code } = ERROR[error];
+  return res.status(status).json({ error: { code, message: ERROR[error].message } })
 });
 
 app.listen(PORT, () => { console.log(`Ouvindo na porta ${PORT}`) });
