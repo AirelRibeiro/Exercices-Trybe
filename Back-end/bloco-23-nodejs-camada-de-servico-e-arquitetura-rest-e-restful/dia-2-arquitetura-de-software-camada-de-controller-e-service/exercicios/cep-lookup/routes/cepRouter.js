@@ -9,4 +9,10 @@ router.get('/:cep', async (req, res) => {
   res.status(200).json(adress);
 });
 
+router.post('/', async (req, res) => {
+  const { cep, logradouro, bairro, localidade, UF } = req.body;
+  const adress = CepController.insertCepInDataBase(cep, logradouro, bairro, localidade, UF);
+  res.status(200).json(adress);
+});
+
 module.exports = router;
