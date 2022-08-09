@@ -1,13 +1,7 @@
 const CepModel = require('../../models/CepModel');
 const Joi = require('joi');
-const ERROR = require('./errorsObject');
-
-class GenericError extends Error {
-  constructor(message) {
-    super(message);
-    this.error = message;
-  }
-}
+const GenericError = require('../../errors/GenericError');
+const { runSchema } = require('../../errors/errorSchema');
 
 function validateCep(cep) {
   const CEP_REGEX = /^\d{5}-?\d{3}$/;
@@ -19,14 +13,29 @@ function validateCep(cep) {
 }
 
 async function existingCep(cep) {
-  console.log('cep existe?');
-  const adress = await CepModel.findByCep(cep);
-  if(!adress) {
-    console.log('entrei aqui');
+  const [adress] = await CepModel.findByCep(cep);
+  if(adress.length === 0) {
     throw new GenericError('NOT_FOUND_CEP');
   }
   return adress;
 }
+
+const validations = {
+  validdCep: runSchema(Joi.object({
+    cep: Joi.string().regex(/\d{5}-\d{3}/).required(),
+    }), 'INVALID_CEP'),
+  validLogBarAndLoc: runSchema(Joi.object({
+    logradouro: Joi.string().not().empty().required(),
+    bairro: Joi.string().not().empty().required(),
+    localidade: Joi.string().not().empty().required(),
+    }), 'ALL_FIELDS_ ARE_REQUIRED'),
+}
+
+// async function validAdress(cep) {
+//   return runSchema(Joi.object({
+//     cep: Joi.string().regex(/\d{5}-\d{3}/).required(),
+//   }), 'NOT_FOUND_CEP')
+// }
 
 // Joi.object({
 //   cep: Joi.string().regex(/\d{5}-\d{3}/).required(),
@@ -39,5 +48,5 @@ async function existingCep(cep) {
 module.exports = {
   validateCep,
   existingCep,
-  GenericError
+  validations
 }
