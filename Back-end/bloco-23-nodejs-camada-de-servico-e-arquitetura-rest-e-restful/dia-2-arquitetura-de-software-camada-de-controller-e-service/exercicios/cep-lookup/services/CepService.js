@@ -6,10 +6,13 @@ async function findAByCep(cep) {
   return adress;
 }
 
-// async function insertCepAdress(cep, logradouro, bairro, localidade, uf) {
-
-// }
+async function insertCepAdress(cep, logradouro, bairro, localidade, uf) {
+  const validAdress = cepValidation.validations.validLogBarAndLoc(logradouro, bairro, localidade);
+  
+  return validAdress;
+}
 
 module.exports = {
-  findAByCep
+  findAByCep,
+  insertCepAdress
 }
