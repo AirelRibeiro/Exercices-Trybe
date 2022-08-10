@@ -1,0 +1,50 @@
+Exercício 1: Pense em qual é o recurso que estamos trabalhando e altere os endpoints para que fiquem padronizados.
+Exercício 3: Utilize os verbos (POST, PUT, GET etc.) corretos para cada ação do CRUD.
+
+-------------------------------------------------------------------------------------------
+                                                                                           |
+get: /list-products ==> /products                                                          |
+                                                                                           |
+get: /get-by-id/:id ==> /product/:id                                                       |
+                                                                                           |
+post: /add-product ==> /product                                                            |
+                                                                                           |
+post[verbo incorreto]: o verbo deve ser delete /delete-product/:id ==> /product/:id        |
+                                                                                           |
+post[verbo incorreto]: o verbo deve ser put /update-product/:id ==> /product/:id           |
+                                                                                           |
+--------------------------------------------------------------------------------------------
+
+Exercício 2: Padronize todos os retornos para JSON.
+
+--------------------------------------------------------------------------------------------------
+                                                                                                  |
+get: /list-products ==> .json([{produto1}, {produto2}, {produto3}])                               |
+                                                                                                  |
+get: /get-by-id/:id ==> .json({produto desse id})                                                 |
+                                                                                                  |
+post: /add-product ==> .json({produto adicionado})                                                |
+                                                                                                  |
+post[verbo incorreto]: o verbo deve ser delete /delete-product/:id ==> sem mensagem               |
+                                                                                                  |
+post[verbo incorreto]: o verbo deve ser put /update-product/:id ==> .json({produto atualizado})   |
+                                                                                                  |
+---------------------------------------------------------------------------------------------------
+
+Exercício 4: Garanta que todos os endpoints tenham as respostas (status code) coerentes, ou seja, código para requisições bem sucedidas, validações, tratamento de erros, etc.
+
+--------------------------------------------------------------------------------------------------
+                                                                                                  |
+get: /list-products ==> .status(200)                                                              |
+                                                                                                  |
+get: /get-by-id/:id ==> .status(200)                                                              |
+                                                                                                  |
+post: /add-product ==> .status(201)                                                               |
+                                                                                                  |
+post[verbo incorreto]: o verbo deve ser delete /delete-product/:id ==> .status(204)               |
+                                                                                                  |
+post[verbo incorreto]: o verbo deve ser put /update-product/:id ==> .status(200)                  |
+                                                                                                  |
+---------------------------------------------------------------------------------------------------
+
+*Não houveram alterações no código
