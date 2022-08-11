@@ -8,7 +8,7 @@ const MoviesModel = {
         [id],
       );
     
-      return result[0];
+      return result;
 
   }
 }
