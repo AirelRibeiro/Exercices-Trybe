@@ -1,8 +1,11 @@
 const { Book } = require('../models');
+const { Op } = require('sequelize');
 
 const BooksService = {
   getAll: async () => {
-    const books = await Book.findAll();
+    const books = await Book.findAll({
+      order: [['title', 'ASC']]
+    });
     return books;
   },
 
@@ -28,6 +31,15 @@ const BooksService = {
     const deletedBook = await Book.destroy({ where: { id } });
   
     return deletedBook;
+  },
+
+  getByAuthor: async (author) => {
+    const books = await Book.findAll({
+      where: { author: { [Op.like]: `%${author}%` } },
+      order: [['title', 'ASC']]
+    });
+    // const books = await Book.findAll({ where: { author } })
+    return books;
   }
 }
 

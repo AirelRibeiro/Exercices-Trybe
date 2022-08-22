@@ -3,8 +3,13 @@ const BooksService = require('../services/BooksService');
 
 const BooksControllers = {
   getAll: async(req, res) => {
+    const { author } = req.query;
+    if(author) {
+      const books = await BooksService.getByAuthor(author);
+      return res.status(200).json(books);
+    }
     const books = await BooksService.getAll();
-    res.status(200).json(books);
+    return res.status(200).json(books);
   },
 
   getWithId: async(req, res) => {
@@ -40,7 +45,7 @@ const BooksControllers = {
     if(!book) return res.status(404).json({ message: 'Book not found' });
 
     return res.status(200).json({ message: 'Book deleted' });
-  }
+  },
 }
 
 module.exports = BooksControllers;
