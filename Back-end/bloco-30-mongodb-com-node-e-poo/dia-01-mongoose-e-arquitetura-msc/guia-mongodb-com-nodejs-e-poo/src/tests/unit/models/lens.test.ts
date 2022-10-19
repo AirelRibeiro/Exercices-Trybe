@@ -3,16 +3,18 @@ import sinon from 'sinon';
 import LensModel from '../../../models/Lens';
 import { Model } from 'mongoose';
 import { arrayLensMock, lensMock, lensMockWithId, deletedLens } from '../../mocks/lensModck';
+import connectToDatabase from "../../../models/Connection";
 
 describe('Lens Model', () => {
 
   const lensModel = new LensModel();
 
-	before(() => {
+	before(async () => {
 		sinon.stub(Model, 'create').resolves(lensMockWithId);
 		sinon.stub(Model, 'findOne').resolves(lensMockWithId);
     sinon.stub(Model, 'find').resolves(arrayLensMock);
-    sinon.stub(Model, 'findByIdAndDelete').resolves(deletedLens);
+    // sinon.stub(Model, 'findByIdAndDelete').resolves(deletedLens);
+		await connectToDatabase();
 	});
 
 	after(() => {
