@@ -1,0 +1,44 @@
+Exercício 1: No terminal, inicialize duas variáveis a e b, sendo a = 10 e b = 5. Mostre o resultado das 7 operações básicas (soma, subtração, multiplicação, divisão, divisão inteira, potenciação e módulo) envolvendo essas variáveis.
+
+Executado no terminal:
+
+>>> a = 10
+>>> b = 5
+
+>>> a + b
+15
+
+>>> a - b
+5
+
+>>> a * b
+50
+
+>>> a / b
+2.0
+
+>>> a // b
+2
+
+>>> a ** b
+100000
+
+>>> a % b
+0
+
+>>> b - a
+-5
+
+>>> b / a
+0.5
+
+>>> b // a
+0
+
+>>> b ** a
+9765625
+
+>>> b % a
+5
+
+
